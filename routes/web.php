@@ -12,3 +12,5 @@ Route::get('/', function () {
 
 Route:: get('/contacto', [Principal::class,'contacto']);
 Route:: get('/login', [Principal::class, 'login']);
+
+require __DIR__. "/admin/routes.php";

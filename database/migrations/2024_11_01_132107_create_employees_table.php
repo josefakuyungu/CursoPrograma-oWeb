@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('position', 45);
             $table->string('location', 45);
             $table->string('phone', 45);
+            $table->softDeletes(); 
             $table->timestamps();
         });
     }

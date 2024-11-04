@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\company;
+use App\Models\employee;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,6 +17,9 @@ return new class extends Migration
             $table->id();
  $table->string('email', 45);
  $table->string('senha', 45);
+ $table->foreignIdFor(company::class);
+ $table->foreignIdFor(employee::class);
+ $table->softDeletes();
  $table->timestamps();
         });
     }

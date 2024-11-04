@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\course;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -18,7 +19,8 @@ return new class extends Migration
             $table->string('academicdegree', 45);
             $table->string('locaction', 45);
             $table->string('phone', 45);
-
+            $table->softDeletes(course::class);
+            $table->softDeletes();
             $table->timestamps();
         });
     }
